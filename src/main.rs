@@ -116,7 +116,7 @@ fn main()
     let cmd_args = App::new("vsock-bridge")
         .version(crate_version!())
         .author(crate_authors!())
-        .about("VSOCK bridge application: it creates a bridge between two VMs \
+        .about("VSOCK bridge: creates a bridge between two VSOCK peers \
                 on a specified port")
         .arg(
             Arg::with_name("guest")
@@ -125,7 +125,7 @@ fn main()
                 .takes_value(true)
                 .number_of_values(2)
                 .required(true)
-                .help("<guest> CIDs to bridge"),
+                .help("Guest CIDs to bridge"),
         )
         .arg(
             Arg::with_name("port")
@@ -133,15 +133,15 @@ fn main()
                 .short("p")
                 .takes_value(true)
                 .required(true)
-                .help("<port> to bridge"),
+                .help("Port number to bridge"),
         )
         .arg(
             Arg::with_name("length")
                 .long("length")
                 .short("l")
                 .takes_value(true)
-                .help("<length> [KiB|MiB] of buffer to read or write \
-                      [def. 128KiB]"),
+                .help("buffer length used to move data between sockets \
+                       [def. 128KiB]"),
         )
         .get_matches();
 
