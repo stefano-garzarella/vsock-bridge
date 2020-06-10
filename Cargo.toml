@@ -7,7 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-clap = ""
-bytefmt = ""
+clap = "2.33.0"
+bytefmt = "0.1.7"
 vsock = { git = "https://github.com/stefano-garzarella/rust-vsock" }
-nix = ""
+nix = "0.15.0"
